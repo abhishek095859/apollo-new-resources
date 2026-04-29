@@ -3,7 +3,7 @@ provider "aws" {
 }
 terraform {
   backend "s3" {
-    bucket = "test-apollo-statefile-storing "
+    bucket = "test-apollo-statefile-storing"
     key    = "common_resources/terraform.tfstate"
     region = "ap-south-1"
         assume_role = {
