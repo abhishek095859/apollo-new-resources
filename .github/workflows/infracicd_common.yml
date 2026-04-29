@@ -16,8 +16,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::255902622203:role/ATl-NONSAP-PROD-TERRAFORM-IaaC-IAM-Role
-          aws-region: eu-central-1
+          role-to-assume: arn:aws:iam::185863138492:role/crosssetupB
+          aws-region: ap-south-1
 
       # 2. Setup Terraform
       - name: Setup Terraform
@@ -30,8 +30,8 @@ jobs:
           terraform init -backend-config="backend.hcl"
       #     terraform plan
 
-      # # 4. Run Terraform
-      # - name: Terraform Apply
-      #   working-directory: ./common
-      #   run: |
-      #     terraform apply -auto-approve
+      # 4. Run Terraform
+      - name: Terraform Apply
+        working-directory: ./common
+        run: |
+          terraform apply -auto-approve
