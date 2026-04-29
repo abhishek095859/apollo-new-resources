@@ -1,0 +1,34 @@
+name: "1. Infrastructure"
+on:
+  workflow_dispatch: 
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::185863138492:role/crosssetupB
+          aws-region: ap-south-1
+
+      # 2. Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Verify Identity
+        run: aws sts get-caller-identity
+
+      # 3. Run Terraform
+      - name: Terraform Apply
+        working-directory: ./proj1/prod
+        run: |
+          terraform init -upgrade
+          terraform apply -auto-approve
