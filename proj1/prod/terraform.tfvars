@@ -23,7 +23,7 @@ ec2_role_name = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-IAM-ROLE"
 # ]
 
 # KMS
-alias_name  = "ATL-APAC-MUM-DEVOPS-PROD-KMS-KEY"
+alias_name  = "ATL-EUR-FRNK-NON-SAP-PROD-KMS-KEY"
 description = "EBS encryption key for NAWC ML Inference workloads"
 
 # tags for ec2 applied to every ec2 resource
