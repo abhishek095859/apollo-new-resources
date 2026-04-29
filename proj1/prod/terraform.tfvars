@@ -6,21 +6,21 @@
 region = "ap-south-1"
 
 # Existing VPC – DevOps Prod
-vpc_id = "vpc-025bb7bd64cf1a107" 
+vpc_id = "vpc-04f329a5cddbeece9" 
 
 # Existing IAM Role for EC2 instance profile
 ec2_role_name = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-IAM-ROLE"
 
 # ALB
-alb_name              = "ATL-MUM-NAWC-PROD-ML-ALB"
-alb_target_group_name = "ATL-MUM-NAWC-PROD-ML-TG"
+#alb_name              = "ATL-MUM-NAWC-PROD-ML-ALB"
+#alb_target_group_name = "ATL-MUM-NAWC-PROD-ML-TG"
 
 # List of at least 2 private subnet IDs for the ALB (must span 2 AZs)
-alb_subnet_ids = [
-  "subnet-0528658749cbaba5e",
-  "subnet-047099ca2fa852431",
-  "subnet-059b69127d86197e2"
-]
+# alb_subnet_ids = [
+#   "subnet-0528658749cbaba5e",
+#   "subnet-047099ca2fa852431",
+#   "subnet-059b69127d86197e2"
+# ]
 
 # KMS
 alias_name  = "ATL-APAC-MUM-DEVOPS-PROD-KMS-KEY"
@@ -120,11 +120,11 @@ ec2_instances = {
 
   EC2-01 = {
     name          = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-01"
-    instance_type = "g6.8xlarge"
-    subnet_id     = "subnet-0f4c616899eb5702b"
-    key_name           = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-KYPR"
+    instance_type = "t2.micro"
+    subnet_id     = "subnet-0863964745f3f084d"
+    key_name           = "test-apollo"
     security_group_key = "EC2-SG"
-    volume_size        = 500       
+    volume_size        = 500        
     tags = {
       owner       = "rishabh.prasad@apollotyres.com"
       environment = "prod"
@@ -137,9 +137,9 @@ ec2_instances = {
   }
   EC2-02 = {
     name          = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-02"
-    instance_type = "g6.8xlarge"
-    subnet_id     = "subnet-0e8b46ed67f10b098"
-    key_name           = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-KYPR"
+    instance_type = "t2.micro"
+    subnet_id     = "subnet-0266f82a0315025fc"
+    key_name           = "test-apollo"
     security_group_key = "EC2-SG"
     volume_size        = 500       
     tags = {

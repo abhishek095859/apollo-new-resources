@@ -31,26 +31,26 @@ variable "ec2_instances" {
   }))
 }
 
-variable "alb_name" {
-  description = "Name of the internal ALB"
-  type        = string
-}
+# variable "alb_name" {
+#   description = "Name of the internal ALB"
+#   type        = string
+# }
 
-variable "alb_target_group_name" {
-  description = "Name of the ALB target group"
-  type        = string
-}
+# variable "alb_target_group_name" {
+#   description = "Name of the ALB target group"
+#   type        = string
+# }
 
-variable "alb_subnet_ids" {
-  description = "List of private subnet IDs for ALB placement (min 2 AZs)"
-  type        = list(string)
-}
+# variable "alb_subnet_ids" {
+#   description = "List of private subnet IDs for ALB placement (min 2 AZs)"
+#   type        = list(string)
+# }
 
-variable "acm_certificate_arn" {
-  description = "ARN of the ACM certificate for the ALB HTTPS listener"
-  type        = string
-  default     = ""
-}
+# variable "acm_certificate_arn" {
+#   description = "ARN of the ACM certificate for the ALB HTTPS listener"
+#   type        = string
+#   default     = ""
+# }
 
 variable "alias_name" {
   description = "KMS key alias"

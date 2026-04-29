@@ -13,20 +13,20 @@ output "ec2_ami_used" {
   value       = data.aws_ami.windows_2022.id
 }
 
-output "alb_dns_name" {
-  description = "DNS name of the internal ALB"
-  value       = module.alb.alb_dns_name
-}
+# output "alb_dns_name" {
+#   description = "DNS name of the internal ALB"
+#   value       = module.alb.alb_dns_name
+# }
 
-output "alb_arn" {
-  description = "ARN of the internal ALB"
-  value       = module.alb.alb_arn
-}
+# output "alb_arn" {
+#   description = "ARN of the internal ALB"
+#   value       = module.alb.alb_arn
+# }
 
-output "alb_target_group_arn" {
-  description = "ARN of the ALB target group"
-  value       = module.alb.target_group_arn
-}
+# output "alb_target_group_arn" {
+#   description = "ARN of the ALB target group"
+#   value       = module.alb.target_group_arn
+# }
 
 output "security_group_ids" {
   description = "Security group IDs created"

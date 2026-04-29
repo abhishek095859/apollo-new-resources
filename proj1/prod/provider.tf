@@ -4,7 +4,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "test-apollo-statefile-storing "
-    key    = "common_resources/terraform.tfstate"
+    key    = "prod/terraform.tfstate"
     region = "ap-south-1"
         assume_role = {
       role_arn = "arn:aws:iam::183295435445:role/crossaccountA"

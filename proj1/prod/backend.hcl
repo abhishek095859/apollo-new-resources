@@ -1,3 +1,3 @@
 bucket = "test-apollo-statefile-storing "
-key    = "common_resources/terraform.tfstate"
+key    = "prod/terraform.tfstate"
 region = "ap-south-1"

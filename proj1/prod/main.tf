@@ -103,37 +103,37 @@ module "ec2_instances" {
 # ALB 
 ###############################################################
 
-module "alb" {
-  source = "../../module/alb"
+# module "alb" {
+#   source = "../../module/alb"
 
-  alb_name           = var.alb_name
-  vpc_id             = data.aws_vpc.devops_prod.id
-  subnet_ids         = var.alb_subnet_ids
-  security_group_ids = [module.security_groups["ALB-SG"].security_group_id]
+#   alb_name           = var.alb_name
+#   vpc_id             = data.aws_vpc.devops_prod.id
+#   subnet_ids         = var.alb_subnet_ids
+#   security_group_ids = [module.security_groups["ALB-SG"].security_group_id]
 
-  enable_deletion_protection = false
+#   enable_deletion_protection = false
 
-  ec2_instance_id = module.ec2_instances["EC2-01"].instance_id
+#   ec2_instance_id = module.ec2_instances["EC2-01"].instance_id
 
-  acm_certificate_arn = "" # Not used by module, hardcoded to HTTP
+#   acm_certificate_arn = "" # Not used by module, hardcoded to HTTP
 
-  common_tags = var.common_tags
-}
+#   common_tags = var.common_tags
+# }
 
 ###########################################
 # s3
 ###########################################
-module "s3_bucket" {
-  source = "../../module/s3"
+# module "s3_bucket" {
+#   source = "../../module/s3"
 
-  bucket_name             = var.s3_bucket_name
-  versioning              = var.s3_versioning
-  force_destroy           = var.s3_force_destroy
-  block_public_acls       = var.s3_block_public_acls
-  block_public_policy     = var.s3_block_public_policy
-  ignore_public_acls      = var.s3_ignore_public_acls
-  restrict_public_buckets = var.s3_restrict_public_buckets
+#   bucket_name             = var.s3_bucket_name
+#   versioning              = var.s3_versioning
+#   force_destroy           = var.s3_force_destroy
+#   block_public_acls       = var.s3_block_public_acls
+#   block_public_policy     = var.s3_block_public_policy
+#   ignore_public_acls      = var.s3_ignore_public_acls
+#   restrict_public_buckets = var.s3_restrict_public_buckets
   
-  # Use the common tags defined at the top of your tfvars
-  tags = var.common_tags
-}
+#   # Use the common tags defined at the top of your tfvars
+#   tags = var.common_tags
+# }
