@@ -38,8 +38,8 @@ max_size      = 3
 
 # Use the Subnet IDs created in your console
 subnet_ids = [
-  "subnet-089767f0caecf1df7", 
-  "subnet-03898eff7f85a98eb",
+  "subnet-03898eff7f85a98eb", 
+  "subnet-089767f0caecf1df7",
 ]
 
 
