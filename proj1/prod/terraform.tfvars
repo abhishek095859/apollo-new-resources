@@ -3,10 +3,10 @@
 # Fill in the values marked with REPLACE_ME before applying
 ###############################################################
 
-region = "ap-south-1"
+region = "eu-central-1"
 
 # Existing VPC – DevOps Prod
-vpc_id = "vpc-04f329a5cddbeece9" 
+vpc_id = "vpc-03e53b3b1376d65b7" 
 
 # Existing IAM Role for EC2 instance profile
 ec2_role_name = "ATL-APAC-MUM-DEVOPS-PROD-NAWC-ML-INFER-EC2-IAM-ROLE"
