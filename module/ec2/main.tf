@@ -1,10 +1,11 @@
-data "aws_ami" "windows_2022" {
+data "aws_ami" "windows_2019" {
   most_recent = true
   owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["Windows_Server-2022-English-Full-Base-*"]
+    # Updated filter for Windows Server 2019
+    values = ["Windows_Server-2019-English-Full-Base-*"]
   }
 
   filter {
@@ -14,7 +15,8 @@ data "aws_ami" "windows_2022" {
 }
 
 resource "aws_instance" "this" {
-  ami                    = var.ami_id != "" ? var.ami_id : data.aws_ami.windows_2022.id
+  # Updated reference to the windows_2019 data source
+  ami                    = var.ami_id != "" ? var.ami_id : data.aws_ami.windows_2019.id
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   vpc_security_group_ids = var.security_group_ids
