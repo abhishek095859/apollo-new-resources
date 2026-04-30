@@ -12,13 +12,13 @@ data "aws_vpc" "devops_prod" {
   id = var.vpc_id
 }
 
-data "aws_ami" "windows_2022" {
+data "aws_ami" "windows_2019" {
   most_recent = true
   owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["Windows_Server-2022-English-Full-Base-*"]
+    values = ["Windows_Server-2019-English-Full-Base-*"]
   }
 
   filter {
@@ -31,7 +31,6 @@ data "aws_ami" "windows_2022" {
     values = ["x86_64"]
   }
 }
-
 data "aws_iam_role" "existing_ec2_role" {
   name = var.ec2_role_name
 }
@@ -86,7 +85,7 @@ module "ec2_instances" {
   for_each = var.ec2_instances
 
   instance_name        = each.value.name
-  ami_id               = data.aws_ami.windows_2022.id
+  ami_id               = data.aws_ami.windows_2019.id
   instance_type        = each.value.instance_type
   subnet_id            = each.value.subnet_id
   key_name             = each.value.key_name
