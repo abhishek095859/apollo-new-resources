@@ -17,7 +17,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::185863138492:role/crosssetupB
-          aws-region: ap-south-1
+          aws-region: eu-central-1
 
       # 2. Setup Terraform
       - name: Setup Terraform
